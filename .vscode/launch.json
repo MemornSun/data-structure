@@ -11,7 +11,7 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/10.heap/leetcode/347.js"
+      "program": "${workspaceFolder}/11.graph/index.js"
     }
   ]
 }
