@@ -35,6 +35,20 @@ class GraphLinklist {
     });
   }
   /**
+   * 删除顶点
+   * @date 2022-04-08
+   * @param {any} data
+   * @returns {any}
+   */
+  remove (data) {
+    // 在外层数组中删除data
+    this.value.splice(data, 1)
+    // 将data从每个链表中删掉
+    this.value.forEach(item => {
+      item.remove(data)
+    })
+  }
+  /**
    * 添加边
    * 为a顶点和b顶点添加边
    * @date 2022-04-07
