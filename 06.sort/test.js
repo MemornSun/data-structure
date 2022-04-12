@@ -27,11 +27,11 @@ console.log(reversQuickSort(testRandomArr))
 // const timeEnd4 = new Date().getTime()
 // console.log("mergeSort time pass: ", timeEnd4 - timeStart4)
 
-// // 插入
-// const timeStart2 = new Date().getTime()
-// insertionSort([...testRandomArr])
-// const timeEnd2 = new Date().getTime()
-// console.log("insertionSort time pass: ", timeEnd2 - timeStart2)
+// 插入
+const timeStart2 = new Date().getTime()
+insertionSort([...testRandomArr])
+const timeEnd2 = new Date().getTime()
+console.log("insertionSort time pass: ", timeEnd2 - timeStart2)
 
 // // 选择
 // const timeStart3 = new Date().getTime()

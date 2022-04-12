@@ -24,6 +24,16 @@ class SingleLink {
     }
     return currNode
   }
+  findByIdx (idx) {
+    let currNode = this.head
+    if (idx > 0) {
+      while (currNode && idx > 0) {
+        currNode = currNode.next
+        idx--
+      } 
+    }
+    return currNode 
+  }
   insert (data, item) { // 向item后面插入一个节点，值为data
     const newNode = new Node(data)
     const preNode = this.find(item)
@@ -32,20 +42,23 @@ class SingleLink {
     newNode.next = nextNode
   }
   remove (data) {
-    let currNode = this.head
     const removeNode = this.find(data)
-    while (currNode.value === removeNode.value) {
+    if (!removeNode) { return }
+    let currNode = this.head
+    while (currNode.next && currNode.next.value !== removeNode.value) {
       currNode = currNode.next
     }
     currNode.next = removeNode.next
   }
   display () {
+    let res = new Array()
     let currNode = this.head
     while (currNode.next !== null) {
-      console.log(currNode.value)
+      res.push(currNode.value)
       currNode = currNode.next
     }
-    console.log(currNode.value)
+    res.push(currNode.value)
+    console.log(res)
   }
   append (data) {
     let newNode = new Node(data)
@@ -55,6 +68,15 @@ class SingleLink {
     }
     currNode.next = newNode
     newNode.next = null
+  }
+  size () {
+    let res = 0
+    let currNode = this.head
+    while (currNode) {
+      currNode = currNode.next
+      res++
+    }
+    return res
   }
 }
 

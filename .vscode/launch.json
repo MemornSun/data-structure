@@ -11,7 +11,8 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "program": "${workspaceFolder}/11.graph/index.js"
+      // "program": "${workspaceFolder}/11.graph/index.js"
+      "program": "${workspaceFolder}/06.sort/sort-prac.js"
     }
   ]
 }
