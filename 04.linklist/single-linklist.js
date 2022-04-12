@@ -42,13 +42,13 @@ class SingleLink {
     newNode.next = nextNode
   }
   remove (data) {
-    const removeNode = this.find(data)
-    if (!removeNode) { return }
     let currNode = this.head
-    while (currNode.next && currNode.next.value !== removeNode.value) {
+    while (currNode.next && currNode.next.value !== data) {
       currNode = currNode.next
     }
-    currNode.next = removeNode.next
+    if (currNode.next) {
+      currNode.next = currNode.next.next
+    }
   }
   display () {
     let res = new Array()
